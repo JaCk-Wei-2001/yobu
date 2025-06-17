@@ -38,6 +38,17 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// langchain4j
+//	implementation 'dev.langchain4j:langchain4j-open-ai:1.0.1'
+//	implementation 'dev.langchain4j:langchain4j:1.0.1'
+	implementation 'dev.langchain4j:langchain4j-open-ai:1.0.0-beta3'
+	implementation 'dev.langchain4j:langchain4j:1.0.0-beta3'
+	implementation 'dev.langchain4j:langchain4j-google-ai-gemini:1.0.0-beta3'
+
+	// OAuth2
+//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 tasks.named('test') {

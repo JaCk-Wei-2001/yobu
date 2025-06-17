@@ -1,4 +1,4 @@
-package com.example.quiz13.exception;
+package com.example.yobu.exception;
 
 import java.sql.SQLException;
 import java.util.HashMap;
