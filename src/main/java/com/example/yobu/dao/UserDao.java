@@ -26,5 +26,9 @@ public interface UserDao extends JpaRepository<User, Integer> {
     // 查找
     @Query(value = "select * from user where email = ?1",
             nativeQuery = true)
+<<<<<<< HEAD
     public User getUserByEmail(String email);
+=======
+    public User getQuizByEmail(String email);
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 }

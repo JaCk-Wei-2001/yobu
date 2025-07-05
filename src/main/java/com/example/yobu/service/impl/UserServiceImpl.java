@@ -2,6 +2,7 @@ package com.example.yobu.service.impl;
 
 import com.example.yobu.constants.ResMessage;
 import com.example.yobu.dao.UserDao;
+<<<<<<< HEAD
 import com.example.yobu.entity.User;
 import com.example.yobu.service.ifs.UserService;
 import com.example.yobu.vo.*;
@@ -9,22 +10,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+=======
+import com.example.yobu.service.ifs.UserService;
+import com.example.yobu.vo.BasicRes;
+import com.example.yobu.vo.RegisterReq;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+<<<<<<< HEAD
 public class UserServiceImpl implements UserService, UserDetailsService {
+=======
+public class UserServiceImpl implements UserService {
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 
     @Autowired
     private UserDao userDao;
 
+<<<<<<< HEAD
     // 註冊
+=======
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
     @Transactional(rollbackFor = Exception.class)
     @Override
     public BasicRes register(RegisterReq req) {
         // 判斷是否註冊過
+<<<<<<< HEAD
         if (userDao.getUserByEmail(req.getEmail()) != null) {
+=======
+        if (userDao.getQuizByEmail(req.getEmail()) != null) {
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
             return new BasicRes(ResMessage.EMAIL_ALREADY_REGISTERED.getCode(), //
                     ResMessage.EMAIL_ALREADY_REGISTERED.getMessage());
         }
@@ -39,6 +57,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return new BasicRes(ResMessage.SUCCESS.getCode(), //
                 ResMessage.SUCCESS.getMessage());
     }
+<<<<<<< HEAD
 
     // 登入
     @Transactional(rollbackFor = Exception.class)
@@ -76,4 +95,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 .authorities("USER") // 可根據需要改為 user.getRole()
                 .build();
     }
+=======
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 }

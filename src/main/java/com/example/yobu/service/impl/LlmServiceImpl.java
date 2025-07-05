@@ -1,5 +1,6 @@
 package com.example.yobu.service.impl;
 
+<<<<<<< HEAD
 import com.example.yobu.constants.ResMessage;
 import com.example.yobu.service.ifs.AssistantLocation;
 import com.example.yobu.service.ifs.AssistantText;
@@ -19,10 +20,20 @@ import java.util.List;
 
 import static dev.langchain4j.model.chat.request.ResponseFormatType.JSON;
 
+=======
+import com.example.yobu.service.ifs.Assistant;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import com.example.yobu.service.ifs.LlmService;
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
+import dev.langchain4j.service.AiServices;
+import org.springframework.stereotype.Service;
+
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 
 @Service
 public class LlmServiceImpl implements LlmService {
 
+<<<<<<< HEAD
     private final AssistantLocation assistantLocation;
     private final AssistantText assistantText;
 
@@ -39,11 +50,17 @@ public class LlmServiceImpl implements LlmService {
                 .tools(locationTool)
                 .build();
 
+=======
+    private final Assistant assistant;
+
+    public LlmServiceImpl() {
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
         ChatLanguageModel model = GoogleAiGeminiChatModel.builder()
                 .apiKey(System.getenv("GEMINI_API_KEY"))
                 .modelName("gemini-1.5-flash")
                 .build();
 
+<<<<<<< HEAD
         this.assistantText = AiServices.create(AssistantText.class, model);
     }
 
@@ -67,4 +84,14 @@ public class LlmServiceImpl implements LlmService {
                 locations
         );
     }
+=======
+        this.assistant = AiServices.create(Assistant.class, model);
+    }
+
+    @Override
+    public String chat(String userMessage) {
+        return assistant.chat(userMessage);
+    }
+
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 }

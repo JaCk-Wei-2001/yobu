@@ -2,9 +2,14 @@ package com.example.yobu.constants;
 
 public enum ResMessage {
     SUCCESS(200, "Success!!"), //
+<<<<<<< HEAD
     EMAIL_ALREADY_REGISTERED(400, "Email already registered!!"),//
     EMAIL_NOT_FOUND(400, "Email not found"), //
     PASSWORD_DO_NOT_MATCH(400, "Password do not match");
+=======
+    EMAIL_ALREADY_REGISTERED(400, "Email already registered!!");//
+
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
     public int code;
 
     public String message;

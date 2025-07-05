@@ -36,6 +36,7 @@ dependencies {
     //caffeine cache
     implementation 'com.github.ben-manes.caffeine:caffeine:3.2.0'
 
+<<<<<<< HEAD
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
@@ -52,6 +53,19 @@ dependencies {
     // 解析json
     implementation 'org.json:json:20240303'
     // OAuth2
+=======
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// langchain4j
+//	implementation 'dev.langchain4j:langchain4j-open-ai:1.0.1'
+//	implementation 'dev.langchain4j:langchain4j:1.0.1'
+	implementation 'dev.langchain4j:langchain4j-open-ai:1.0.0-beta3'
+	implementation 'dev.langchain4j:langchain4j:1.0.0-beta3'
+	implementation 'dev.langchain4j:langchain4j-google-ai-gemini:1.0.0-beta3'
+
+	// OAuth2
+>>>>>>> d20e27d279a402c12c9d1f0c080dc925d6773d44
 //	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
