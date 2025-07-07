@@ -1,4 +1,4 @@
-package com.example.quiz13.config;
+package com.example.yobu.config;
 
 import java.util.concurrent.TimeUnit;
 

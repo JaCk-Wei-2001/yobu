@@ -1,8 +1,10 @@
 package com.example.yobu.tool;
 
 import com.example.yobu.vo.LocationVo;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.langchain4j.agent.tool.P;
 import dev.langchain4j.agent.tool.Tool;
+import dev.langchain4j.service.Result;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
@@ -92,6 +94,16 @@ public class LocationTool {
                 results.add(toLoc);
             }
         }
+
+        // 檢查用，之後刪除
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(results);
+            System.out.println("JSON 輸出:\n" + json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return results;
     }
 }
