@@ -69,7 +69,9 @@ public class LocationTool {
         }
     }
 
-    @Tool(name = "queryFromToLocation", value = "判斷使否提供目的地及出發地，若有，則返回從出發地及目的地的經緯度及地址，若無目的地或出發地則返回空清單，不要憑空捏造")
+    @Tool(name = "queryFromToLocation", value = "判斷使否提供目的地及出發地，" +
+            "若有，則返回從出發地及目的地的經緯度及地址，若無目的地或出發地則返回空 list，" +
+            "無論成功與否都只能執行一次")
     public List<LocationVo> queryFromToLocation(
             @P("出發地, 從") String from,
             @P("目的地, 往, 去") String to

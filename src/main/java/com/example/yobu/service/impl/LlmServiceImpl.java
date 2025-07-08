@@ -6,7 +6,6 @@ import com.example.yobu.service.ifs.AssistantText;
 import com.example.yobu.tool.LocationTool;
 import com.example.yobu.vo.ChatRes;
 import com.example.yobu.vo.LocationVo;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import com.example.yobu.service.ifs.LlmService;
 import dev.langchain4j.model.chat.request.ResponseFormat;
@@ -54,6 +53,11 @@ public class LlmServiceImpl implements LlmService {
         System.out.println("AI Response: " + aiResponse);
         Result<List<LocationVo>> result = assistantLocation.getLatlng(userMessage);
         List<LocationVo> locations = result.content();
+
+        System.out.println("==============");
+        System.out.println("aiResponse" + aiResponse);
+        System.out.println("==============");
+        System.out.println("locations: " + locations);
 
         return new ChatRes(
                 ResMessage.SUCCESS.getCode(),
