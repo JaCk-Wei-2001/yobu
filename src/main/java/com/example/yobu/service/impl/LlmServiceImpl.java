@@ -49,6 +49,7 @@ public class LlmServiceImpl implements LlmService {
 
     @Override
     public ChatRes chat(String userMessage) {
+
         String aiResponse = assistantText.chat(userMessage);
         System.out.println("AI Response: " + aiResponse);
         Result<List<LocationVo>> result = assistantLocation.getLatlng(userMessage);
@@ -56,6 +57,8 @@ public class LlmServiceImpl implements LlmService {
 
         System.out.println("==============");
         System.out.println("aiResponse" + aiResponse);
+        System.out.println("==============");
+        System.out.println("result: " + result);
         System.out.println("==============");
         System.out.println("locations: " + locations);
 

@@ -69,16 +69,16 @@ public class LocationTool {
         }
     }
 
-    @Tool(name = "queryFromToLocation", value = "判斷使否提供目的地及出發地，" +
-            "若有，則返回從出發地及目的地的經緯度及地址，若無目的地或出發地則返回空 list，" +
-            "無論成功與否都只能執行一次")
-    public List<LocationVo> queryFromToLocation(
+    @Tool(name = "queryFromToLocation", value = "查詢從出發地到目的地的經緯度，禁止自行編造出發地及目的地")
+    public Result<List<LocationVo>> queryFromToLocation(
             @P("出發地, 從") String from,
             @P("目的地, 往, 去") String to
     ) {
         System.out.println("有使用工具 queryFromToLocation");
         if (from == null || to == null || from.isBlank() || to.isBlank()) {
-            return List.of(); // 立即返回空清單
+            return Result.<List<LocationVo>>builder()
+                    .content(new ArrayList<LocationVo>(List.of()))
+                    .build();
         }
         List<LocationVo> results = new ArrayList<>();
         System.out.println("查詢出發地: " + from + ", 目的地: " + to);
@@ -96,16 +96,8 @@ public class LocationTool {
                 results.add(toLoc);
             }
         }
-
-        // 檢查用，之後刪除
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(results);
-            System.out.println("JSON 輸出:\n" + json);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return results;
+        return Result.<List<LocationVo>>builder()
+                .content(results)
+                .build();
     }
 }

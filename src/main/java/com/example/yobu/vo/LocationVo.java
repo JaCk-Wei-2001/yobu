@@ -14,7 +14,7 @@ public class LocationVo {
     private double lng;
 
     @JsonProperty("address")
-    @Description("地點，例如：桃園火車站, 桃園市桃園區中正路1號")
+    @Description("地點，例如：400台灣台中市中區臺中火車站")
     private String address;
 
     public LocationVo() {
