@@ -29,6 +29,7 @@ dependencies {
     //security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
+    // MVC
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6'
 
     //spring cache
@@ -36,26 +37,32 @@ dependencies {
     //caffeine cache
     implementation 'com.github.ben-manes.caffeine:caffeine:3.2.0'
 
-
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // langchain4j
     implementation 'dev.langchain4j:langchain4j-open-ai:1.0.0-beta3'
-	implementation 'dev.langchain4j:langchain4j:1.0.0-beta3'
-	implementation 'dev.langchain4j:langchain4j-google-ai-gemini:1.0.0-beta3'
+    implementation 'dev.langchain4j:langchain4j:1.0.0-beta3'
+    implementation 'dev.langchain4j:langchain4j-google-ai-gemini:1.0.0-beta3'
 
     // openai
     implementation 'dev.langchain4j:langchain4j:1.0.0-beta3'
 
     // JWT JSON Web Token
-    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    //    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    // JJWT 核心 API
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    // 運行時實現
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    // Jackson 序列化支持
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     // 解析json
     implementation 'org.json:json:20240303'
     // OAuth2
-
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
 }
 
 tasks.named('test') {
